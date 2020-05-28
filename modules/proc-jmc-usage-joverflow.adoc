@@ -1,7 +1,7 @@
 [id="jmc-joverflow"]
 = JOverflow & hprof
 
-As of JMC 7.1.0, the JOverflow plugin has been re-written and is now included by default in JMC. The JOverflow plugin analyzes heap dump information from `*.hprof` files, searching for memory usage anti-patterns including duplicate strings, empty arrays, and unused collections. Heap dumps can be performed in JMC by right-clicking a JVM in the JVM Browser and selecting *Dump Heap* from the context menu. When the hprof file is generated, JOverflow will open it automatically. Because the JOverflow plugin analyzes hprof files instead of jfr files, it does not have the same integration with other JMC pages and may best be thought of as it's own indepedent view.
+As of JMC 7.1.0, the JOverflow plugin has been re-written and is now included by default in JMC. The JOverflow plugin analyzes heap dump information from `.hprof` files, searching for memory usage anti-patterns including duplicate strings, empty arrays, and unused collections. Heap dumps can be performed in JMC by right-clicking a JVM in the JVM Browser and selecting *Dump Heap* from the context menu. When the hprof file is generated, JOverflow will open it automatically. Because the JOverflow plugin analyzes hprof files instead of jfr files, it does not have the same integration with other JMC pages and may best be thought of as it's own indepedent view.
 
 The JOverflow view divides the page into four quadrants for displaying information. The page can be reset at any point in time via a button located in the top-right corner of the page.
 

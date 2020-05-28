@@ -1,0 +1,19 @@
+[id="jmc-real-time"]
+= Real-Time Monitoring
+
+JMC is able to deliver real-time information via the MBean server. This can be observed via the JVM Browser tab inside of JMC, by either right-clicking a running JVM and selecting the *Start JMX Console* option, or by expanding the displayed JVM tree menu and double-clicking the *MBean Server* item.
+
+There are a handful of pages for displaying information pertaining to the JVM.
+
+The Overview page displays information such as CPU and memory usage, in both graph form and in a dashboard with dials like a pressure gauge.
+
+.JMC JMX Console
+image::jmc_jmxconsole.png[JMC JMX Console]
+
+There are dedicated pages for viewing specific information such as MBean objects, System information, Memory, and Threads.
+
+There are also two interactive pages: the Triggers and Diagnostic Commands pages.
+
+The Triggers page allows the user to set an action to be fired in response to specific activity in the JVM. These actions could be as simple as displaying an alert dialog or writing a message to the console, or more complicated like starting or dumping a flight recording. Some examples of activity that could trigger an action would be CPU usage surpassing a set value, or threads entering deadlock.
+
+The Diagnostic Commands page allows for the usage of jcmd commands via a GUI. This page displays a list of commands and their options, and upon executing a command, displays the output.

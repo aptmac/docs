@@ -1,0 +1,3 @@
+JDK Mission Control is an open source production time profiling and diagnostics tool for Java.
+
+JMC has two main ways of presenting information: real-time monitoring of running JVMs, and historical analysis via flight recordings and hprof files (as of JMC 7.1.0).

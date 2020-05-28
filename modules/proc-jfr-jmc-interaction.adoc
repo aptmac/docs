@@ -1,0 +1,13 @@
+[id="jfr-jmc-interaction"]
+= Interacting with a Flight Recording in progress
+
+Once a flight recording has been started, it will appear under the *Flight Recording* tree menu. There are several ways of interacting with a flight recording in progress by right-clicking a recording and using the context menu options. More specifically, the options are:
+
+- *Dump...*: opens a dialog with options to specify the time interval of interest
+- *Dump whole recording*: dumps the entire flight recording
+- *Dump last part*: by default this is the last 5 minutes
+- *Edit*: opens a dialog with the first and third pages of the flight recording wizard
+- *Stop*: stops the flight recording, but keeps it in the JVM Browser for dumping
+- *Close*: stops and removes the flight recording from the JVM Browser
+
+When a flight recording has been dumped it will be opened automatically by JMC.

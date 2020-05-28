@@ -1,0 +1,26 @@
+[id="jfr-openjdk-running"]
+= Using JDK Flight Recorder on a currently running JVM with jcmd
+
+Located under $JAVA_HOME/bin, jcmd is a utility that can be used to send diagnostic command requests to a running JVM. jcmd includes commands for interacting with JFR, with the most basic commands being start, dump, and stop.
+
+In order to interact with a JVM, jcmd requires it's process id. The pid can be retrieved by using `jcmd -l` which displays a list of the running JVM process ids, as well as other information such as the main class and command-line arguments that were used to launch the processes.
+
+- Start a recording with: `jcmd <pid> JFR.start <options>`
+
+Example: The following command will start a recording named *demorecording*, which will keep data from the last four hours, and will be limited to a size of 400 MB.
+
+`$ jcmd _pid_ JFR.start name=demorecording maxage=4h maxsize=400MB`
+
+- Dump a recording with: `jcmd <pid> JFR.dump <options>`
+
+Example: The following command will dump a flight recording file called `dumpedrecording.jfr` from the previously started recording *demorecording*
+
+`$ jcmd _pid_ JFR.dump name=demorecording filename=dumpedrecording.jfr`
+
+- Stop a recording with: `jcmd <pid> JFR.stop <options>`
+
+Example: The following command will stop the recording named *demorecording*, and will write its contents to a file called `demorecording.jfr` at the path provided
+
+`$ jcmd _pid_ JFR.stop name=demorecording filename=/home/user/recordings/demorecording.jfr`
+
+For more information about `jcmd` usage and additional JFR commands and options, see the Oracle jcmd documentation: https://docs.oracle.com/en/java/javase/11/tools/jcmd.html

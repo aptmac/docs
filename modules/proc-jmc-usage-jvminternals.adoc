@@ -1,0 +1,4 @@
+[id="jmc-jvm-internals"]
+= JVM Internals
+
+JMC includes pages to deliver information about the JVM, starting with the JVM Internals page which displays information such as what version of Java was used, and what JVM arguments and flags were used. Additionally, there are dedicated pages for detailing Garbage Collections, GC Configuration, Compilations, Class Loading, VM Operations, and TLAB Allocations.

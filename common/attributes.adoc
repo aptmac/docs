@@ -13,7 +13,7 @@
 :experimental:
 
 // Guide directory structure
-:imagesdir: images
+:imagesdir: ../../images
 :filesdir: files
 
 // Platforms

@@ -1,0 +1,6 @@
+[id="jmc-stack-trace"]
+= Stace Trace & Flame View
+
+In addition to the various JFR-related pages, JMC contains a pane which displays the Stack Trace view by default, and can be updated to optionally include the Flame View. Both of these views update in response to data selections in the JFR-related pages. For example, selecting an entry in the Memory page table will update the Stack Trace and Flame Views to display the information relevant to the selected class.
+
+New to JMC 7.1.0, the Flame View can be added to the Stack Trace pane via a dialog located under `Window -> Show View -> Other...`, and selecting the *Flame View* item under the Mission Control tree menu. The Flame View displays stack traces in a graphical representation, where the stack frames are placed on top of each other. This view contains a search bar for quick highlighting of relevant stack frames, and tooltips that upon hovering a stack frame to display additional information.

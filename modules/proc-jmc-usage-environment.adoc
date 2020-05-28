@@ -1,0 +1,4 @@
+[id="jmc-environment-data"]
+= Environment
+
+The Environment page and subsequent pages contain information about the host machine, including its Processes, Environment Variables, System Properties, Native Libraries, and information about the actual recording.

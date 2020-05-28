@@ -1,0 +1,11 @@
+[id="jfr-jmc-triggers"]
+= Using Flight Recorder with the JMC Triggers Page
+
+Flight recordings can also be started or dumped in response to a user-defined trigger rule. This can be setup in the Triggers page of a running JVM through the JMX Console.
+
+.JMC Triggers page
+image::jmc_triggers.png[JMC Triggers page]
+
+The left side of the Triggers page displays rules and conditions that, when met, will trigger an action. These actions are listed on the right-side of the Triggers page, under the header *Rule Details*. The JFR-related actions are: Dump Flight Recording, Start Continuous Flight Recording, and Start Time Limited Flight Recording.
+
+For example: a trigger rule could be setup to dump a flight recording containing the last 30 seconds of data in response to the JVM CPU usage surpassing 75%.

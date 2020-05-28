@@ -3,3 +3,4 @@
 * link:getting-started/index.html[Getting started with OpenJDK]
 * link:rhel/index.html[Using Red Hat OpenJDK on RHEL]
 * link:windows/index.html[Using Red Hat OpenJDK on Windows]
+* link:jfr-jmc/index.html[Using JDK Flight Recorder (JFR) for JDK Mission Control (JMC)]

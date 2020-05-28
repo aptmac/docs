@@ -1,0 +1,4 @@
+[id="jdk-flight-recorder"]
+= JDK Flight Recorder (JFR)
+
+include::../modules/proc-jfr-intro.adoc[leveloffset=+1]

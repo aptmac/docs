@@ -1,0 +1,21 @@
+[id="jdk-mission-control-usage"]
+= Analyzing data using JDK Mission Control
+
+include::../modules/snip-jmc-usage-intro.adoc[]
+
+.JMC JFR pages - Java Application page
+image::jmc_jfrpages.png[JMC JFR pages - Java Application page]
+
+include::../modules/proc-jmc-usage-automated.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-usage-javaapplication.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-usage-jvminternals.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-usage-environment.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-usage-eventbrowser.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-usage-stacktrace.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-usage-joverflow.adoc[leveloffset=+1]

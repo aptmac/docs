@@ -1,0 +1,12 @@
+[id="jdk-flight-recorder-usage"]
+= Using JDK Flight Recorder
+
+include::../modules/proc-jfr-openjdk-start.adoc[leveloffset=+1]
+
+include::../modules/proc-jfr-openjdk-running.adoc[leveloffset=+1]
+
+include::../modules/proc-jfr-jmc-wizard.adoc[leveloffset=+1]
+
+include::../modules/proc-jfr-jmc-triggers.adoc[leveloffset=+1]
+
+include::../modules/proc-jfr-jmc-interaction.adoc[leveloffset=+1]

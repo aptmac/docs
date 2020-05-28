@@ -1,0 +1,24 @@
+[id="jfr-jmc-wizard"]
+= JMC JVM Browser & Flight Recording wizard
+
+JMC has a Flight Recording Wizard that allows for a streamlined experience of starting and configuring flight recordings. This wizard can be launched by either:
+
+1. Right-clicking a JVM in the JVM Browser view and selecting the *Start Flight Recording ...* option from the context menu, or by expanding the JVM
+2. Expanding a JVM tree menu in the JVM Browser, and double-clicking the *Flight Recorder* tree item
+
+.JVM Browser - using Flight Recorder
+image::jmc_jvmbrowser.png[JMC JVM Browser]
+
+
+The Flight Recording Wizard has a total of three pages.
+
+.JMC JFR wizard
+image::jmc_jfrwizard.png[JMC JFR wizard]
+
+The first page contains general recording settings for the flight recording. These configurable settings include the name of the recording, where the file will be saved to and what it will be named, whether this is a time fixed or continuous recording, which event template will be used, and finally a description of the recording.
+
+The second page contains event options for the flight recording. These settings include the level of detail to be recorded by various types of events, for example, Garbage Collections, Memory Profiling, and Method Sampling, among others.
+
+The third and final page contains settings for the event details, and allows for turning events on or off, enable the recording of stack traces, and altering the time threshold required to record an event.
+
+Once the settings are adjusted for the flight recording, the wizard will exit and start the flight recording once the *Finish* button has been selected.

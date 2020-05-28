@@ -1,0 +1,6 @@
+[id="jmc-historical-analysis"]
+= Historical Analysis (JFR & hprof)
+
+JMC has a separate suite of pages and tools for displaying flight recording information. Flight recording files can be opened via the File menu, or automatically when a flight recording is dumped using JMC. These pages and their functionality will be covered in more detail later, in part 4: Analyzing Flight Recordings using JDK Mission Control.
+
+As of JMC 7.1.0, the JOverflow plugin has been refactored and included by default with JMC. This allows for the visualization of heap dump hprof files (`*.hprof`). For a detailed look at how to use the JOverflow page, see a blog post written by the Marcus Hirt (JMC Project Lead): http://hirt.se/blog/?p=854

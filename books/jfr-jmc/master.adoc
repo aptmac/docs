@@ -1,0 +1,18 @@
+include::common/attributes.adoc[]
+
+:context: jfr-jmc
+
+= Using JDK Flight Recorder (JFR) for JDK Mission Control (JMC)
+
+include::modules/snip-jfr-jmc-intro.adoc[]
+
+include::assemblies/assembly-jfr-intro.adoc[leveloffset=+1]
+
+include::assemblies/assembly-jmc-intro.adoc[leveloffset=+1]
+
+include::assemblies/assembly-jfr-usage.adoc[leveloffset=+1]
+
+include::assemblies/assembly-jmc-usage.adoc[leveloffset=+1]
+
+//revision info
+include::common/revision-info.adoc[]

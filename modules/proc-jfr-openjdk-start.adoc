@@ -1,0 +1,16 @@
+[id="jfr-openjdk-start"]
+= Starting JDK Flight Recorder at JVM start time
+
+When starting a Java process, JFR can be started by using the JVM flag: `--XX:StartFlightRecording`.
+
+There are also a couple of ways to adjust the behaviour of JFR by adding extra parameters. This can be performed by adding options to the end of the StartFlightRecording JVM flag `--XX:StartFlightRecording=<options>`, or by using the dedicated flag `--XX:FlightRecorderOptions=<options>`. Options are a comma delimited list of key-value pairs.
+
+Example 1: The following command will start a flight recording at the same time as running the Demo application
+
+`$ java --XX:StartFlightRecording Demo`
+
+Example 2: The following command will start the Demo application and will initiate a 1 hour long flight recording, which will later be saved to a file called "demorecording.jfr"
+
+`$ java --XX:StartFlightRecording=duration=1h,filename=demorecording.jfr Demo`
+
+For a more comprehensive and detailed list of JFR options, see the Oracle java documentation: https://docs.oracle.com/en/java/javase/11/tools/java.html

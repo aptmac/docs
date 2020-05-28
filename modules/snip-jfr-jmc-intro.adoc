@@ -1,0 +1,2 @@
+JDK Flight Recorder (JFR) is a production time profiling and diagnostics engine built into the JVM.
+JDK Mission Control (JMC) is, among other things, the client tool used to look at recordings produced by the JDK Flight Recorder.

@@ -1,0 +1,1 @@
+JMC contains a suite of pages for displaying information from JFR files (`*.jfr`). These pages can be divided into several categories.

@@ -1,0 +1,4 @@
+[id="jmc-event-browser"]
+= Event Browser
+
+The Event Browser contains a list of all the events in the flight recording. The page includes a search bar and tree-view for quick inspection, and a table to display details from the recorded events.

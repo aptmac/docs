@@ -1,0 +1,4 @@
+[id="jmc-java-application"]
+= Java Application
+
+JMC includes a handful of pages to visualize and display information related to the execution of the Java Application. The Java Application page includes a high-level view into various aspects of the programs execution, which are later expanded upon and displayed in more detail in subsequent pages. These pages include the Threads, Memory, Lock Instances, File I/O, Socket I/O, Method Profiling, Exceptions, and Thread Dumps pages.

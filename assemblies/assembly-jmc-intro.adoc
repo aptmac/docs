@@ -1,0 +1,8 @@
+[id="jdk-mission-control"]
+= JDK Mission Control (JMC)
+
+include::../modules/proc-jmc-intro.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-realtime.adoc[leveloffset=+1]
+
+include::../modules/proc-jmc-historical.adoc[leveloffset=+1]

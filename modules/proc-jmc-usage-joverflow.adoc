@@ -1,0 +1,19 @@
+[id="jmc-joverflow"]
+= JOverflow & hprof
+
+As of JMC 7.1.0, the JOverflow plugin has been re-written and is now included by default in JMC. The JOverflow plugin analyzes heap dump information from `*.hprof` files, searching for memory usage anti-patterns including duplicate strings, empty arrays, and unused collections. Heap dumps can be performed in JMC by right-clicking a JVM in the JVM Browser and selecting *Dump Heap* from the context menu. When the hprof file is generated, JOverflow will open it automatically. Because the JOverflow plugin analyzes hprof files instead of jfr files, it does not have the same integration with other JMC pages and may best be thought of as it's own indepedent view.
+
+The JOverflow view divides the page into four quadrants for displaying information. The page can be reset at any point in time via a button located in the top-right corner of the page.
+
+.JMC JOverflow page
+image::jmc_joverflow.png[JMC JOverflow page]
+
+The top left quadrant contains an Object Selection table, which displays a list of the anti-patterns that were flagged by the analysis, and how much memory was used and lost as a result.
+
+The top right quadrant contains the Referrer tree table, which displays aggregated reference chains for the current selection.
+
+The bottom left quadrant contains a pie chart and related table, which displays the currently selected information with the ability to filter the data by selecting a class from the table or the chart itself.
+
+The bottom right quadrant contains another pie chart, this time displaying objects grouped by their closest ancestor referrer. Similar to the previous quadrant, the page data can be filtered by interacting with the table or the chart itself.
+
+For a detailed look at how to use the JOverflow page, see a blog post written by the Marcus Hirt (JMC Project Lead): http://hirt.se/blog/?p=854

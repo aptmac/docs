@@ -1,0 +1,15 @@
+JDK Flight Recorder manages data gathered from the JVM. Data is written in memory, first to thread local buffers, and then promoted to a fixed-size global ring buffer. Traditionally, this data is eventually flushed to JFR files (`*.jfr`) on disk, which is then consumed by other applications for analysis, for example by JDK Mission Control.
+
+.Recordings
+
+Users manage the system’s recordings. Individual recordings have unique configuration and can be started, stopped, and dumped to disk on demand.
+
+.Events
+
+Events are the basic unit of JFR data. The JVM has pre-existing events and there is API for users to supply both static and dynamic custom events. Every event can be enabled or disabled when recording to minimize overhead.
+
+JFR profiles, or event templates, (`*.jfc`) can be used to configure the events for a recording. The JDK distribution comes with two profiles: 'default' and 'profile'.
+
+default: Low overhead configuration safe for continuous use in production environments, typically less than 1 % overhead.
+
+profile: Low overhead configuration for profiling, typically around 2 % overhead.

@@ -1,0 +1,9 @@
+[id="jmc-automated-analysis"]
+= Automated Analysis Results
+
+The Automated Analysis Results page is opened by default when a flight recording file is loaded.
+
+.JMC Automated Analysis page
+image::jmc_automated.png[JMC Automated Analysis page]
+
+JMC scans the JFR file looking for patterns in the data and tries to identify performance and functional issues. Once analysis is completed, it displays a list of areas where potential problems have been detected, and provides insight into how these warnings may be resolved.

@@ -474,7 +474,7 @@ JDK Mission Control (JMC) is, among other things, the client tool used to look a
 <h2 id="jdk-flight-recorder"><a class="anchor" href="#jdk-flight-recorder"></a><a class="link" href="#jdk-flight-recorder">1. JDK Flight Recorder (JFR)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>JDK Flight Recorder manages data gathered from the JVM. Data is written in memory, first to thread local buffers, and then promoted to a fixed-size global ring buffer. Traditionally, this data is eventually flushed to JFR files (<code>*.jfr</code>) on disk, which is then consumed for analysis, for example by JDK Mission Control.</p>
+<p>JDK Flight Recorder manages data gathered from the JVM. Data is written in memory, first to thread local buffers, and then promoted to a fixed-size global ring buffer. Traditionally, this data is eventually flushed to JFR files (<code>*.jfr</code>) on disk, which is then consumed by other applications for analysis, for example by JDK Mission Control.</p>
 </div>
 <div class="paragraph">
 <div class="title">Recordings</div>
@@ -559,14 +559,18 @@ JDK Mission Control (JMC) is, among other things, the client tool used to look a
 <div class="paragraph">
 <p>Example 1: The following command will start a flight recording at the same time as running the Demo application</p>
 </div>
-<div class="paragraph">
-<p><code>java --XX:StartFlightRecording Demo</code></p>
+<div class="listingblock">
+<div class="content">
+<pre>$ java --XX:StartFlightRecording Demo</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Example 2: The following command will start the Demo application and will initiate a 1 hour long flight recording, which will later be saved to a file called "demorecording.jfr"</p>
 </div>
-<div class="paragraph">
-<p><code>java --XX:StartFlightRecording=duration=1h,filename=demorecording.jfr Demo</code></p>
+<div class="listingblock">
+<div class="content">
+<pre>$ java --XX:StartFlightRecording=duration=1h,filename=demorecording.jfr Demo</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>For a more comprehensive and detailed list of JFR options, see the Oracle java documentation: <a href="https://docs.oracle.com/en/java/javase/11/tools/java.html" class="bare">https://docs.oracle.com/en/java/javase/11/tools/java.html</a></p>
@@ -580,44 +584,32 @@ JDK Mission Control (JMC) is, among other things, the client tool used to look a
 <div class="paragraph">
 <p>In order to interact with a JVM, jcmd requires it&#8217;s process id. The pid can be retrieved by using <code>jcmd -l</code> which displays a list of the running JVM process ids, as well as other information such as the main class and command-line arguments that were used to launch the processes.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Start a recording with: <code>jcmd &lt;pid&gt; JFR.start &lt;options&gt;</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<div class="title"><strong>Start</strong> a recording with: <code>jcmd &lt;pid&gt; JFR.start &lt;options&gt;</code></div>
+<p>Example: The following command will start a recording named <strong>demorecording</strong>, which will keep data from the last four hours, and will be limited to a size of 400 MB</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ jcmd pid JFR.start name=demorecording maxage=4h maxsize=400MB</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Example: The following command will start a recording named <strong>demorecording</strong>, which will keep data from the last four hours, and will be limited to a size of 400 MB.</p>
-</div>
-<div class="paragraph">
-<p><code>jcmd <em>pid</em> JFR.start name=demorecording maxage=4h maxsize=400MB</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Dump a recording with: <code>jcmd &lt;pid&gt; JFR.dump &lt;options&gt;</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
+<div class="title"><strong>Dump</strong> a recording with: <code>jcmd &lt;pid&gt; JFR.dump &lt;options&gt;</code></div>
 <p>Example: The following command will dump a flight recording file called <code>dumpedrecording.jfr</code> from the previously started recording <strong>demorecording</strong></p>
 </div>
-<div class="paragraph">
-<p><code>jcmd <em>pid</em> JFR.dump name=demorecording filename=dumpedrecording.jfr</code></p>
+<div class="listingblock">
+<div class="content">
+<pre>$ jcmd pid JFR.dump name=demorecording filename=dumpedrecording.jfr</pre>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Stop a recording with: <code>jcmd &lt;pid&gt; JFR.stop &lt;options&gt;</code></p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
+<div class="title"><strong>Stop</strong> a recording with: <code>jcmd &lt;pid&gt; JFR.stop &lt;options&gt;</code></div>
 <p>Example: The following command will stop the recording named <strong>demorecording</strong>, and will write its contents to a file called <code>demorecording.jfr</code> at the path provided</p>
 </div>
-<div class="paragraph">
-<p><code>jcmd <em>pid</em> JFR.stop name=demorecording filename=/home/user/recordings/demorecording.jfr</code></p>
+<div class="listingblock">
+<div class="content">
+<pre>$ jcmd pid JFR.stop name=demorecording filename=/home/user/recordings/demorecording.jfr</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>For more information about <code>jcmd</code> usage and additional JFR commands and options, see the Oracle jcmd documentation: <a href="https://docs.oracle.com/en/java/javase/11/tools/jcmd.html" class="bare">https://docs.oracle.com/en/java/javase/11/tools/jcmd.html</a></p>
@@ -780,7 +772,7 @@ JDK Mission Control (JMC) is, among other things, the client tool used to look a
 <div class="sect2">
 <h3 id="jmc-joverflow"><a class="anchor" href="#jmc-joverflow"></a><a class="link" href="#jmc-joverflow">4.7. JOverflow &amp; hprof</a></h3>
 <div class="paragraph">
-<p>As of JMC 7.1.0, the JOverflow plugin has been re-written and is now included by default in JMC. The JOverflow plugin analyzes heap dump information from <code><strong>.hprof</code> files, searching for memory usage anti-patterns including duplicate strings, empty arrays, and unused collections. Heap dumps can be performed in JMC by right-clicking a JVM in the JVM Browser and selecting *Dump Heap</strong> from the context menu. When the hprof file is generated, JOverflow will open it automatically. Because the JOverflow plugin analyzes hprof files instead of jfr files, it does not have the same integration with other JMC pages and may best be thought of as it&#8217;s own indepedent view.</p>
+<p>As of JMC 7.1.0, the JOverflow plugin has been re-written and is now included by default in JMC. The JOverflow plugin analyzes heap dump information from <code>.hprof</code> files, searching for memory usage anti-patterns including duplicate strings, empty arrays, and unused collections. Heap dumps can be performed in JMC by right-clicking a JVM in the JVM Browser and selecting <strong>Dump Heap</strong> from the context menu. When the hprof file is generated, JOverflow will open it automatically. Because the JOverflow plugin analyzes hprof files instead of jfr files, it does not have the same integration with other JMC pages and may best be thought of as it&#8217;s own indepedent view.</p>
 </div>
 <div class="paragraph">
 <p>The JOverflow view divides the page into four quadrants for displaying information. The page can be reset at any point in time via a button located in the top-right corner of the page.</p>
@@ -807,7 +799,7 @@ JDK Mission Control (JMC) is, among other things, the client tool used to look a
 <p>For a detailed look at how to use the JOverflow page, see a blog post written by the Marcus Hirt (JMC Project Lead): <a href="http://hirt.se/blog/?p=854" class="bare">http://hirt.se/blog/?p=854</a></p>
 </div>
 <div class="paragraph">
-<p><em>Revised on 2020-05-28 15:20:32 EDT</em></p>
+<p><em>Revised on 2020-05-28 16:24:05 EDT</em></p>
 </div>
 </div>
 </div>
